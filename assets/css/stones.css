@@ -1,0 +1,40 @@
+h1{
+    position: relative;
+    color: white
+}
+h2{
+    position: relative;
+    color: white;
+}
+div{
+    position: relative;
+    color: white;
+}
+p{
+    position: relative;
+    color:white;
+}
+#purpleStone{
+    position: fixed;
+    top: 45%;
+    left: 26.5%;
+    opacity: 0;
+}
+#redStone{
+    position: fixed;
+    top: 35%;
+    left: 40%;
+    opacity: 0;
+}
+#blueStone{
+    position: fixed;
+    top: 25%;
+    left: 64%;
+    opacity: 0;
+}
+#greenStone{
+    position: fixed;
+    top: 20%;
+    left: 81%;
+    opacity: 0;
+}
