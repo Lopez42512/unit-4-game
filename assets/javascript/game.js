@@ -4,15 +4,6 @@ var loses = 0;
 //user score as they click on stones
 var score = 0;
 
-var myMusic = document.getElementById("voice");
-var myMusic2 = document.getElementById("voice_2")
-var playMusic = function play() {
-    myMusic.play();
-}
-var playMusic2 = function play() {
-    myMusic2.play();
-}
-
 //create render function to update html
 function render() {
     $("#win").text(wins);
@@ -32,111 +23,36 @@ var redWorth = Math.floor(Math.random() * 12) + 1;
 var blueWorth = Math.floor(Math.random() * 12) + 1;
 var greenWorth = Math.floor(Math.random() * 12) + 1;
 
+//create a reset button 
 var reset = function () {
-    score = 0
-
-    var cpuGuess = Math.floor(Math.random() * 102) + 19;
-
-    //create a function for crystal worth between 1-12
-    var purpleWorth = Math.floor(Math.random() * 12) + 1;
-    var redWorth = Math.floor(Math.random() * 12) + 1;
-    var blueWorth = Math.floor(Math.random() * 12) + 1;
-    var greenWorth = Math.floor(Math.random() * 12) + 1;
+    //reset score back to 0
+    score = 0;
+    
+    //cpu guess a new number to acheive
+    cpuGuess = Math.floor(Math.random() * 102) + 19;
 
     //set number user has to achieve
     $("#numToGuess").text(cpuGuess);
 
-    $("#purpleStone").on("click", function () {
-        //increase counter on when image is click
-        score += purpleWorth;
-
-        if (score === cpuGuess) {
-            playMusic2();
-            //alert("You Win!");
-            wins++;
-            reset();
-        };
-        if (score > cpuGuess) {
-            playMusic();
-            //alert("You Lose!");
-            loses++;
-            reset();
-        };
-        render();
-    });
-
-    $("#redStone").on("click", function () {
-        //increase counter on when image is click
-        score += redWorth;
-
-        if (score === cpuGuess) {
-            playMusic2();
-            //alert("You Win!");
-            wins++;
-            reset();
-        }
-        if (score > cpuGuess) {
-            playMusic();
-            //alert("You Lose!");
-            loses++;
-            reset();
-        };
-        render();
-    });
-
-    $("#blueStone").on("click", function () {
-        //increase counter on when image is click
-        score += blueWorth;
-
-        if (score === cpuGuess) {
-            playMusic2();
-            //alert("You Win!");
-            wins++;
-            reset();
-        };
-        if (score > cpuGuess) {
-            playMusic();
-            //alert("You Lose!");
-            loses++;
-            reset();
-        };
-        render();
-    });
-
-    $("#greenStone").on("click", function () {
-        //increase counter on when image is click
-        score += greenWorth;
-
-        if (score === cpuGuess) {
-            playMusic2();
-            //alert("You Win!");
-            wins++;
-            reset();
-        };
-        if (score > cpuGuess) {
-            playMusic();
-            //alert("You Lose!");
-            loses++;
-            reset();
-        };
-        render();
-    });
+    //create a function for crystal worth between 1-12
+    purpleWorth = Math.floor(Math.random() * 12) + 1;
+    redWorth = Math.floor(Math.random() * 12) + 1;
+    blueWorth = Math.floor(Math.random() * 12) + 1;
+    greenWorth = Math.floor(Math.random() * 12) + 1;
 };
 
+//click event for the purple stone
 $("#purpleStone").on("click", function () {
     //increase counter on when image is click
     score += purpleWorth;
 
     if (score === cpuGuess) {
-        playMusic2();
-        //alert("You Win!");
+        alert("You Win!");
         wins++;
-        purpleWorth = 0;
         reset();
     };
     if (score > cpuGuess) {
-        playMusic();
-        //alert("You Lose!");
+        alert("You Lose!");
         loses++;
         reset();
     };
@@ -148,14 +64,12 @@ $("#redStone").on("click", function () {
     score += redWorth;
 
     if (score === cpuGuess) {
-        playMusic2();
-        //alert("You Win!");
+        alert("You Win!");
         wins++;
         reset();
     }
     if (score > cpuGuess) {
-        playMusic();
-        //alert("You Lose!");
+        alert("You Lose!");
         loses++;
         reset();
     };
@@ -167,14 +81,12 @@ $("#blueStone").on("click", function () {
     score += blueWorth;
 
     if (score === cpuGuess) {
-        playMusic2();
-        //alert("You Win!");
+        alert("You Win!");
         wins++;
         reset();
     };
     if (score > cpuGuess) {
-        playMusic();
-        //alert("You Lose!");
+        alert("You Lose!");
         loses++;
         reset();
     };
@@ -186,14 +98,12 @@ $("#greenStone").on("click", function () {
     score += greenWorth;
 
     if (score === cpuGuess) {
-        playMusic();
-        //alert("You Win!");
+        alert("You Win!");
         wins++;
         reset();
     };
     if (score > cpuGuess) {
-        playMusic2();
-        //alert("You Lose!");
+        alert("You Lose!");
         loses++;
         reset();
     };
